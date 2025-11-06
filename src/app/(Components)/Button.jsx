@@ -1,10 +1,10 @@
-"use clients"
+"use client"
 
 
 const Button = ({className,children}) => {
  
   return (
-    <div className={`bg-[#CC7722] text-white ${className}`}>{children}</div>
+    <div className={` text-white ${className}`}>{children}</div>
   )
 }
 
