@@ -2,7 +2,10 @@ import React from 'react'
 import Container from '../Container'
 import Flex from '../Flex'
 import ProductCard from '../ProductCard'
-
+import Deliciosa from '/public/Deliciosa.svg'
+import Shvets from '/public/Shvets.svg'
+import Pavel from '/public/Pavel.svg'
+import  Stroobants from '/public/Stroobants.svg'
 const FeaturedProduct = () => {
   return (
     <>
@@ -12,7 +15,10 @@ const FeaturedProduct = () => {
             Featured Product
           </h3>
           <Flex className={"justify-between"}>
-<ProductCard/>
+<ProductCard Productimg={Deliciosa} Name={'Monstera Deliciosa'} Type={"Indoor Plant"} Price={"2000 - 3,400"} review={"(24)"}/>
+<ProductCard Productimg={Shvets} Name={'Organic Compost Fertilizer'} Type={"Fertilizer"} Price={"60 - 440"} review={"(12)"}/>
+<ProductCard Productimg={Pavel} Name={'Pruning Shears'} Type={"Equipment"} Price={"180 - 450"} review={"(34)"}/>
+<ProductCard Productimg={Stroobants} Name={'Snake Plant'} Type={"Indoor Plant"} Price={" 150- 500 "} review={"(35)"}/>
           </Flex>
         </Container>
     </div>
