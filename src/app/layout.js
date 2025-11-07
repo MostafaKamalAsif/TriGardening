@@ -2,6 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Poppins } from "next/font/google";
 import "./globals.css";
 import Header from "./(Components)/Layout/Header";
+import Footer from "./(Components)/Layout/Footer";
 
 // Font setup
 const geistSans = Geist({
@@ -33,6 +34,7 @@ export default function RootLayout({ children }) {
       >
         <Header />
         {children}
+        <Footer/>
       </body>
     </html>
   );
