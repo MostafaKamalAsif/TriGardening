@@ -64,7 +64,7 @@ const ProductHeader = () => {
       <div className="bg-white pt-[49px] pb-[19px]">
         <Container>
           <div className="flex items-center gap-2 text-[18px] text-[#404040]">
-            <Link href="/products" className="hover:text-[#7A9B57]">
+            <Link href="/" className="hover:text-[#7A9B57]">
               Home
             </Link>
             <span className="text-[#7A9B57]">{">"}</span>
