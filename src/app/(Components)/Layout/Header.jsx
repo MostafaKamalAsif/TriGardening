@@ -51,7 +51,7 @@ const Header = () => {
                   "rounded-[14px] w-[156px] pl-2.5 pr-5 py-2 text-[20px] flex items-center gap-x-[9px] bg-[#CC7722] "
                 }
               >
-                <IoCall className="text-white" /> Call Now
+                <IoCall className="text-white" /> <Link href={'about'}>Call Now</Link> 
               </Button>
             </div>
 

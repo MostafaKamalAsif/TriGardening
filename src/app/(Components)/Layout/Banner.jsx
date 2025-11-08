@@ -29,7 +29,7 @@ const Banner = () => {
    <p className='text-[29.29px] pt-3.5 pb-[60px]'>Your slogan goes here</p>
    <div className=" gap-x-11 flex items-center">
     <Button className={"bg-[#CC7722] rounded-[63.16px] px-[72px] py-[23px] text-[29.29px] font-medium"}><Link href={"/products"}>Shop Now</Link></Button>
-    <Button className={"bg-[#CC7722] rounded-[63.16px] px-[72px] py-[23px] text-[29.29px] font-medium"}>Call Now</Button>
+    <Button className={"bg-[#CC7722] rounded-[63.16px] px-[72px] py-[23px] text-[29.29px] font-medium"}><Link href={'about'}>Call Now</Link> </Button>
    </div>
    </Container>
    </div>
