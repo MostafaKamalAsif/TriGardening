@@ -1,9 +1,8 @@
-import React from 'react'
-import Container from '../Container'
-import Flex from '../Flex'
 import Image from 'next/image'
-import Plant_Clinic_Analysis from '/public/PlantAnalysis.svg'
+import Container from '../../(Components)/Container'
+import Flex from '../../(Components)/Flex'
 import Expert_Blog_Content from '/public/Content.svg'
+import Plant_Clinic_Analysis from '/public/PlantAnalysis.svg'
 import Satisfaction_Guarantee from '/public/Satisfaction.svg'
 const Commitment = () => {
   return (

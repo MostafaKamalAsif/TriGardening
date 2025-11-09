@@ -1,7 +1,6 @@
-import React from 'react'
-import Container from '../Container'
-import Flex from '../Flex'
-import ExpertCard from '../ExpertCard'
+import Container from '../../(Components)/Container'
+import ExpertCard from './ExpertCard'
+import Flex from '../../(Components)/Flex'
 import CEO from '/public/CEO.svg'
 import Spacalist from '/public/Specialist.svg'
 

@@ -1,10 +1,9 @@
-import React from 'react'
-import Container from '../Container'
-import Flex from '../Flex'
 import Image from 'next/image'
-import Conference  from '/public/Conference.svg'
-import YouTube  from '/public/YouTube.svg'
-import Terp  from '/public/Terp.svg'
+import Container from '../../(Components)/Container'
+import Flex from '../../(Components)/Flex'
+import Conference from '/public/Conference.svg'
+import Terp from '/public/Terp.svg'
+import YouTube from '/public/YouTube.svg'
 
 const Community = () => {
   return (
@@ -25,8 +24,8 @@ const Community = () => {
                     </div>
                   </Flex>
 
-                   <Flex className={'pt-[82px] gap-x-[27px]'}>
-                    <Image src={YouTube } alt='YouTube'/>
+                   <Flex className={'pt-[82px] gap-x-[27px] '}>
+                    <Image src={YouTube } alt='YouTube' className='-mt-22'/>
                     <div className="text-[#FFFFFF]">
                       <h4 className='text-[28px] font-semibold '>Trigardening Youtube Channel</h4>
                       <p className='text-xl font-light w-[713px] pb-[87px] '>Join us on YouTube for quick gardening tips, tricks, and guides to grow smarter.</p>

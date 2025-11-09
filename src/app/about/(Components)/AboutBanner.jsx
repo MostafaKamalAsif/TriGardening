@@ -1,5 +1,4 @@
-import React from 'react'
-import Button from '../Button'
+import Button from '../../(Components)/Button'
 
 const AboutBanner = () => {
   return (

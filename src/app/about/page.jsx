@@ -1,8 +1,8 @@
-import React from 'react'
-import AboutBanner from '../(Components)/Layout/AboutBanner'
-import Experts from '../(Components)/Layout/Experts'
-import Commitment from '../(Components)/Layout/Commitment'
-import Community from '../(Components)/Layout/Community'
+import AboutBanner from './(Components)/AboutBanner'
+import Commitment from './(Components)/Commitment'
+import Community from './(Components)/Community'
+import Contact from './(Components)/Contact'
+import Experts from './(Components)/Experts'
 
 const about = () => {
   return (
@@ -11,6 +11,7 @@ const about = () => {
     <Experts/>
     <Commitment/>
     <Community/>
+    <Contact/>
     </>
   )
 }

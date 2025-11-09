@@ -1,8 +1,7 @@
-import Image from 'next/image'
-import React from 'react'
-import Flex from './Flex'
+import Image from 'next/image';
 import { FaStar } from "react-icons/fa";
-import Button from './Button';
+import Button from '@/app/(Components)/Button';
+import Flex from '@/app/(Components)/Flex';
 const ProductCard = ({Productimg,Name,Type, Price,review}) => {
   return (
     <>

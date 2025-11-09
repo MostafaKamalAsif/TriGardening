@@ -1,15 +1,14 @@
-import React from 'react'
+import { IoIosArrowDown } from "react-icons/io"
+import Button from '../(Components)/Button'
+import CategoryList from './Components/CategoryList'
 import Container from '../(Components)/Container'
 import Flex from '../(Components)/Flex'
-import CategoryList from '../(Components)/CategoryList'
-import PriceSlider from '../(Components)/PriceSlider'
-import Button from '../(Components)/Button'
+import PriceSlider from './Components/PriceSlider'
+import ProductCard from './Components/ProductCard'
 import Deliciosa from '/public/Deliciosa.svg'
-import Shvets from '/public/Shvets.svg'
 import Pavel from '/public/Pavel.svg'
-import  Stroobants from '/public/Stroobants.svg'
-import ProductCard from '../(Components)/ProductCard'
-import { IoIosArrowDown } from "react-icons/io";
+import Shvets from '/public/Shvets.svg'
+import Stroobants from '/public/Stroobants.svg'
 
 const products = () => {
   return (

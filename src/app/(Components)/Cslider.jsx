@@ -1,13 +1,12 @@
 "use client";
 import Image from 'next/image';
-import React from 'react'
-import Deliciosa from '/public/Deliciosa.svg'
-import Shvets from '/public/Shvets.svg'
-import Pavel from '/public/Pavel.svg'
-import  Stroobants from '/public/Stroobants.svg'
 import Slider from "react-slick";
-import next from "/public/NextPage.svg"
-import ProductCard from './ProductCard';
+import ProductCard from '../products/Components/ProductCard';
+import Deliciosa from '/public/Deliciosa.svg';
+import next from "/public/NextPage.svg";
+import Pavel from '/public/Pavel.svg';
+import Shvets from '/public/Shvets.svg';
+import Stroobants from '/public/Stroobants.svg';
 function NextArrow({ onClick }) {
     return (
         <div

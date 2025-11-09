@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Container from "../Container";
 import Link from "next/link";
+import Container from "@/app/(Components)/Container";
 
 const ProductHeader = () => {
   const [activeItem, setActiveItem] = useState("Home");
