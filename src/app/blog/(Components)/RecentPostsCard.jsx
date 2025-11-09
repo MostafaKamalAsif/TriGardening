@@ -1,4 +1,4 @@
-import Link from 'next/link';
+
 import Image from 'next/image';
 import PostCard from '/public/PostCard.svg';
 import Flex from '@/app/(Components)/Flex';
@@ -6,7 +6,7 @@ import React from 'react';
 
 const RecentPostsCard = ({ Title, PostDate, slug }) => {
   return (
-    <Link href={`/blog/${slug}`}>
+    
       <Flex className="cursor-pointer hover:bg-gray-50 p-2 rounded-lg transition-all duration-300">
         <Image src={PostCard} alt='Recent Post' />
         <div className="pl-4.5">
@@ -16,7 +16,7 @@ const RecentPostsCard = ({ Title, PostDate, slug }) => {
           <p className='text-[#8C8C8C] text-[16px]'>{PostDate}</p>
         </div>
       </Flex>
-    </Link>
+    
   );
 };
 
