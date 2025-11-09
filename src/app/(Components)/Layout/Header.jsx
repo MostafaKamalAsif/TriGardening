@@ -61,11 +61,11 @@ const Header = () => {
                 placeholder="Search plants, tools"
                 className="placeholder:text-[22px]  placeholder:text-white  outline outline-[#B7B7B7] w-[328px] rounded-full pl-[22px] pt-3 pb-[9px] pr-[88px]  "
               />
-              <IoSearchSharp className="absolute top-[50%] right-14  -translate-y-[50%] text-2xl " />
+             <IoSearchSharp className="absolute top-[50%] right-14  -translate-y-[50%] text-2xl " />
             </div>
 
             <div className=" flex items-center gap-x-[52px] pr-0">
-              <MdShoppingCart className="text-white w-[35px] h-[35px]" />
+              <Link href={'/cart'}> <MdShoppingCart className="text-white w-[35px] h-[35px]" /></Link>
               <FaUser className="text-white w-[35px] h-[35px]" />
             </div>
           </Flex>

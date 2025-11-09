@@ -1,8 +1,11 @@
 import React from 'react'
+import ChatBox from './(Components)/ChatBox'
 
 const Plant = () => {
   return (
-    <div>Plant</div>
+    <>
+    <ChatBox/>
+    </>
   )
 }
 

@@ -1,11 +1,15 @@
+'use client'
 import Flex from '@/app/(Components)/Flex'
 import Image from 'next/image'
-import React from 'react'
 import Logo from '/public/ChatLogo.svg'
 import Bar from '/public/Side_Panel.svg'
 import Chat from '/public/NewChat.svg'
 import { IoSearchSharp,IoImageOutline } from "react-icons/io5";
+import { useState } from 'react';
 
+
+const SideBar = () => {
+  const [activeChat, setActiveChat] = useState(0);
 const chatHistory = [
     { id: 1, text: "How to fix yellow leaves" },
     { id: 2, text: "Mango plant leaf issue" },
@@ -13,17 +17,17 @@ const chatHistory = [
     { id: 4, text: "সবচেয়ে ভালো ভেজ সার" },
     { id: 5, text: "টমেটো গাছের পাতা হলুদ" }
   ];
-const SideBar = () => {
+
   return (
     <>
-    <div className="bg-[#7A9B57] pb-[1795px] pt-7 pl-[23px] pr-2.5">
+    <div className="bg-[#7A9B57] pb-[1900px] pt-7 pl-[23px] pr-2.5">
      
     <Flex className={'justify-between'}> 
         <Image src={Logo} alt='logo' quality={100}/>
         <Image src={Bar} alt='Bar'/>
     </Flex>
      {/* Menu Items */}
-    <div className="pt-[58px] pb-[64px] space-y-4">
+    <div className="pt-[58px] pb-16 space-y-4">
         <Flex className={'gap-x-[22px]'}>
             <Image src={Chat} alt='New Chat'/>
             <h3 className='text-[23px] text-white '>New Chat</h3>
@@ -39,19 +43,23 @@ const SideBar = () => {
     </div>
 
      {/* History Section */}
-     <div className="flex-1 px-4 overflow-y-auto scrollbar-thin scrollbar-thumb-white/20 scrollbar-track-transparent">
-        <h3 className="text-sm font-semibold mb-3 text-white/70 uppercase tracking-wider">
+      <div className="">
+        <h3 className="pl-5 text-[23px] font-bold mb-3 text-white   tracking-wider">
           History
         </h3>
         
-        <div className="space-y-2 pb-4">
+        <div className="space-y-2 ">
           {chatHistory.map((chat, index) => (
             <button
               key={chat.id}
-              
-              className={`w-full text-left px-4 py-3 rounded-xl transition-all `}
+              onClick={() => setActiveChat(index)}
+              className={`w-full  px-5   py-3 rounded-[19px]  ${
+                activeChat === index
+                  ? 'bg-[#F5F5DC]/70 shadow-lg text-[#2D5016]'
+                  : 'bg-transparent hover:bg-white/15 text-[#FFFFFF] '
+              }`}
             >
-              <p className="text-sm font-medium truncate">{chat.text}</p>
+              <p className=" font-medium truncate text-[23px]">{chat.text}</p>
             </button>
           ))}
         </div>
