@@ -8,12 +8,13 @@ import UserProvide from "/public/yellowLeaf.svg";
 import ChatCardUsage from "./ChatCardUsage";
 import Button from "@/app/(Components)/Button";
 import Flex from "@/app/(Components)/Flex";
+import Container from "@/app/(Components)/Container";
 
 const ChatBox = () => {
   return (
     <>
       <div className="pl-[98px] pr-[118px] pb-[103px] pt-[179px]">
-        <div className=""></div>
+        <Container>
         {/* Doctor side */}
         <ChatCard
           className={"pb-15"}
@@ -89,6 +90,7 @@ const ChatBox = () => {
             </Button>
           </div>
         </div>
+        </Container>
       </div>
     </>
   );

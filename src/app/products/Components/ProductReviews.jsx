@@ -1,7 +1,7 @@
 
 
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { MdEdit } from "react-icons/md";
 import { BiLike, BiDislike } from "react-icons/bi";
@@ -10,8 +10,14 @@ import Flex from '@/app/(Components)/Flex';
 import Button from '@/app/(Components)/Button';
 import Image from 'next/image';
 import rating from '/public/rateing.svg'
+import ProductCard from './ProductCard';
+import { products } from '@/app/data/productsData';
+import Login from '@/app/(Components)/Login';
 const ProductReviews = () => {
-
+ const [loginshow,setLoginshow]=useState(false)
+const handebtnLoging=()=>{
+  setLoginshow(!loginshow)
+}
 
   const highlights = [
     { text: 'Easy to Grow', bgColor: '#E8F5E9', textColor: '#2D5016' },
@@ -62,16 +68,22 @@ const ProductReviews = () => {
       comment: 'আমার ইন্দোর গার্ডেনের জন্য এটাকেতর পারপেক্ত। পাত্র পুক্তঃ গাছ এককোম এম্প এমন বাসুকাম সুলভ পরিস্থিতি আপনার মধ্যে সঙ ব্যবহার। সবার পরে অনেক অপেক্ষা বেরিদ শেখিতসে। কারণ গাছ সামিবান তীবের গার থো কোন প্রকল্প করবে এবং তারের করবে এবং কাউসুর সেভার টারগানের করুম।',
       helpful: 12,
       notHelpful: 0,
-      images: ['/HridoySent_1.svg', '/HridoySent_1.svg']
+      images: ['/HridoySent_1.svg', '/HridoySent_2.svg']
     }
   ];
 
   return (
     <>
-    <Container className={'pt-[124px]'}>
-    
-
-    
+    <Container className={'pt-[124px] relative '}>
+     
+    <div className="w-[1652px]  pb-[124px]">
+      <h3 className='text-[52px] font-semibold text-[#2D5016] text-center pb-[61px]'>Related Products</h3>
+<Flex className={"flex-wrap justify-between  gap-y-7"}>
+            {products.slice(0, 4).map((product) => (
+              <ProductCard key={product.id} product={product} />
+            ))}
+          </Flex>
+    </div>
       {/* Header */}
       <h2 className="text-[52px] font-semibold text-[#2D5016] mb-2">Customer Reviews & Ratings</h2>
       <div className="">
@@ -104,13 +116,16 @@ const ProductReviews = () => {
         <div className="flex- space-y-3">
         <Image src={rating} alt='rating'/>
         </div>
+       
+
         </Flex>
         <hr  className='w-[1521px] mt-[86px] mb-[38.3px] border border-[#D9D9D9]'/>
-        <Button className={' w- [301px] flex items-center gap-2 bg-[#2D5016] text-white px-6 py-3 rounded-[8px] hover:bg-[#1d3910] transition-colors'}>
+        <Button onClick={handebtnLoging} className={' w- [301px] flex items-center gap-2 bg-[#2D5016] text-white px-6 py-3 rounded-[8px] hover:bg-[#1d3910] transition-colors'}>
  <MdEdit size={26} />
-          <span className="text-[26px] font-medium">Write Review</span>
+          <p className="text-[26px] font-medium">Write Review</p>
+          
         </Button>
-         
+        
       </div>
 
       
@@ -138,11 +153,11 @@ const ProductReviews = () => {
       {/* Reviews List */}
       <div className="space-y-8">
         {reviews.map((review) => (
-          <div key={review.id} className="pb-8 w-[1641px] bg-[#FFFFFF] rounded-[20px] ">
+          <div key={review.id} className="pb-8 w-[1641px] pt-[43px] pl-[58px] pr-[62px] bg-[#FFFFFF] rounded-[20px] ">
             {/* Reviewer Header */}
             <div className="flex items-start gap-3 mb-4">
               <div className="w-12 h-12 rounded-full bg-[#BDBDBD] overflow-hidden flex-shrink-0">
-                <div className="w-full h-full bg-gradient-to-br from-[#7A9B57] to-[#2D5016]" />
+                <Image src={review.avatar} alt='avater' width={61} height={61}/>
               </div>
               <div>
                 <h4 className="text-[16px] font-semibold text-[#1E1E1E] mb-1">{review.name}</h4>
@@ -156,12 +171,8 @@ const ProductReviews = () => {
                     </span>
                   )}
                   <span className="text-[#7A9B57]">{review.date}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* Rating Stars */}
-            <div className="flex gap-1 mb-4 ml-15">
+                   {/* Rating Stars */}
+            <div className="flex gap-1  mb-4 ml-[1014px]">
               {[...Array(5)].map((_, i) => (
                 <FaStar 
                   key={i} 
@@ -170,6 +181,11 @@ const ProductReviews = () => {
                 />
               ))}
             </div>
+                </div>
+              </div>
+            </div>
+
+           
 
             {/* Review Content */}
             <div className="bg-white border border-[#B7B7B7] rounded-[8px] p-6 mb-4 ml-15">
@@ -180,10 +196,17 @@ const ProductReviews = () => {
             {review.images && (
               <div className="flex gap-3 mb-4 ml-15">
                 {review.images.map((img, idx) => (
-                  <div key={idx} className="w-20 h-20 rounded-[8px] bg-[#E0E0E0] overflow-hidden">
-                    <div className="w-full h-full bg-gradient-to-br from-[#BDBDBD] to-[#9E9E9E]" />
+                 
+                  <div key={idx}  className="">
+                    <Image  src={img} alt='Images' width={118}  height={118}/>
+                    
                   </div>
+                  
+                  
+                  
+                  
                 ))}
+                
               </div>
             )}
 
@@ -216,11 +239,18 @@ const ProductReviews = () => {
 
       {/* Load More Button */}
       <div className="text-center mt-10">
-        <button className="bg-white border-2 border-[#7A9B57] text-[#2D5016] px-10 py-3 rounded-[8px] text-[16px] font-medium hover:bg-[#E8F5E9] transition-all">
+        <button className="bg-white border-2 border-[#7A9B57] text-[#2D5016] px-10 py-3 rounded-[8px] text-[22px] font-medium hover:bg-[#E8F5E9] transition-all">
           Load More Reviews
         </button>
       </div>
     </div>
+     {loginshow &&(
+      <div className="absolute top-1/2 left-1/2 -translate-1/2">
+        <Login/>
+      </div>
+        
+      
+          )}
     </Container>
     </>
   );

@@ -8,6 +8,7 @@ import { IoSearchSharp,IoImageOutline } from "react-icons/io5";
 import { useState } from 'react';
 
 
+
 const SideBar = () => {
   const [activeChat, setActiveChat] = useState(0);
 const chatHistory = [
@@ -20,7 +21,8 @@ const chatHistory = [
 
   return (
     <>
-    <div className="bg-[#7A9B57] pb-[1900px] pt-7 pl-[23px] pr-2.5">
+    <div className="bg-[#7A9B57] w-[373px] pb-[1900px] pt-7 pl-[23px] pr-2.5">
+     
      
     <Flex className={'justify-between'}> 
         <Image src={Logo} alt='logo' quality={100}/>
@@ -44,7 +46,7 @@ const chatHistory = [
 
      {/* History Section */}
       <div className="">
-        <h3 className="pl-5 text-[23px] font-bold mb-3 text-white   tracking-wider">
+        <h3 className="pl-5 text-[23px] font-bold mb-3 text-white   ">
           History
         </h3>
         

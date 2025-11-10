@@ -177,11 +177,12 @@ const { items, totalQuantity } = useSelector((state) => state.cart);
     </Flex>
     
   </div>
+
 </Flex>
 
               
 
-              {/* ✅ Redux Add to Cart  */}
+              {/*  Redux Add to Cart  */}
               <Button
                 onClick={handleAddToCart}
                 className={
@@ -191,7 +192,62 @@ const { items, totalQuantity } = useSelector((state) => state.cart);
                 Add to Cart
               </Button>
             </div>
+            <div className="">
+<div className=" w-[349px] pb-[30px] bg-[#FFFFFF] drop-shadow-[0_4px_7.7px_rgba(0,0,0,0.11)] rounded-[20px] pt-5 pl-8.5">
+             <h3 className='text-[#404040] text-[23px] font-semibold pb-7.5'>You may also like</h3>
+             <Flex className={'gap-x-[23px] pb-7'}>
+              <Image src={'/Fiddle.svg'} alt='Fiddle' width={71} height={71}/>
+              <div>
+                <h4 className='text-[18px] text-[#404040] font-medium'> Fiddle Leaf Plant</h4>
+                <p className='text-[16px] text-[#8C8C8C] py-1.5'>Indoor Plant</p>
+                <h4 className='text-[#CC7722] text-[16px]'>৳ 150</h4>
+              </div>
+             </Flex>
+
+             <Flex className={'gap-x-[23px] pb-7'}>
+              <Image src={'/snake.svg'} alt='Fiddle' width={71} height={71}/>
+              <div>
+                <h4 className='text-[18px] text-[#404040] font-medium'> Snake Plant</h4>
+                <p className='text-[16px] text-[#8C8C8C] py-1.5'>Indoor Plant</p>
+                <h4 className='text-[#CC7722] text-[16px]'>৳ 150</h4>
+              </div>
+             </Flex>
+
+
+             <Flex className={'gap-x-[23px] pb-7'}>
+              <Image src={'/Monstera.svg'} alt='Fiddle' width={71} height={71}/>
+              <div>
+                <h4 className='text-[18px] text-[#404040] font-medium'> Monstera Delisiosa</h4>
+                <p className='text-[16px] text-[#8C8C8C] py-1.5'>Indoor Plant</p>
+                <h4 className='text-[#CC7722] text-[16px]'>৳ 3,400</h4>
+              </div>
+             </Flex>
+
+
+             <Flex className={'gap-x-[23px] pb-7'}>
+              <Image src={'/Vermi.svg'} alt='Fiddle' width={71} height={71}/>
+              <div>
+                <h4 className='text-[18px] text-[#404040] font-medium'> Vermi Compost</h4>
+                <p className='text-[16px] text-[#8C8C8C] py-1.5'>Fertilizer</p>
+                <h4 className='text-[#CC7722] text-[16px]'>৳ 200</h4>
+              </div>
+             </Flex>
+
+
+             <Flex className={'gap-x-[23px] pb-7'}>
+              <Image src={'/Vine.svg'} alt='Fiddle' width={71} height={71}/>
+              <div>
+                <h4 className='text-[18px] text-[#404040] font-medium'> Vine</h4>
+                <p className='text-[16px] text-[#8C8C8C] py-1.5'>Outdoor Plant</p>
+                <h4 className='text-[#CC7722] text-[16px]'>৳ 150</h4>
+              </div>
+             </Flex>
+            
+       </div>
+        <Image src={'/love.svg'} alt='love icon' width={94} height={65} className='pt-[161px]'/>
+</div>
           </Flex>
+          
           <Image src={Description} alt={`${product.name} Description`}/>
       
        <ProductReviews/>
