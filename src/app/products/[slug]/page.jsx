@@ -14,6 +14,7 @@ import ImageGallery from '../Components/ImageGallery';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/app/redux/cartSlice';
 import PotColorSelector from '../Components/PotColor';
+import ProductReviews from '../Components/ProductReviews';
 
 const ProductDetailPage = ({ params }) => {
   // ✅ unwrap the async params (Next.js 16+)
@@ -169,6 +170,7 @@ const ProductDetailPage = ({ params }) => {
             </div>
           </Flex>
       
+       <ProductReviews/>
       </Container>
     </div>
   );
