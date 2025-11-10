@@ -30,7 +30,7 @@ const Header = () => {
       <header className="bg-[#2D5016] pt-4.5 pb-[21px]">
         <Container>
           <Flex className={" "}>
-            <div className=" flex items-center pr-[82px]">
+            <div className=" flex items-center ">
               <Image
                 src={Logo}
                 alt="Logo"
@@ -43,7 +43,7 @@ const Header = () => {
                 TriGardening
               </h2>
             </div>
-            <div className="">
+            <div className="pl-[82px]">
               <ul className="flex items-center gap-x-20  ">
                 <li className="text-xl text-white">
                   <Link href={"/"}>Home</Link>
@@ -92,8 +92,10 @@ const Header = () => {
               <FaUser className="text-white w-[35px] h-[35px]" />
             </div>
           </Flex>
-        </Container>
-      </header>
+       
+    
+       </Container>
+         </header>
     </>
   );
 };

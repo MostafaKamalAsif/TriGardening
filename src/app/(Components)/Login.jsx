@@ -1,10 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { Facebook, Chrome } from 'lucide-react';
+import Image from 'next/image';
 
-/**
- * A responsive login card component mirroring the provided design.
- * It uses Tailwind CSS for styling and functional components for state management.
- */
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +15,7 @@ const Login = () => {
     setMessage('');
     setLoading(true);
 
-    // Mock API call simulation
+   
     await new Promise(resolve => setTimeout(resolve, 1500));
 
     if (phoneNumber.length > 5 && password.length >= 6) {
@@ -34,37 +31,30 @@ const Login = () => {
     setMessage(`Initiating login via ${platform}... (Not implemented)`);
   };
 
-  // Define the core green color used throughout the design
-  const PRIMARY_GREEN = 'bg-[#357731]';
-  const TEXT_GREEN = 'text-[#357731]';
-  const BORDER_GREEN = 'border-[#357731]';
+
 
   return (
-    // Full screen container for centering
-    <div className=" flex items-center justify-center p-4">
+  <>   // Full screen container for centering
+
       
-      {/* Login Card Container */}
-      <div className=" max-w-sm md:max-w-md bg-white rounded-xl shadow-2xl overflow-hidden
-                    border-4 border-b-[30px] border-solid border-gray-100/50"
-           style={{ borderColor: 'rgba(53, 119, 49, 0.15)' }} // Subtle green shadow/border
-      >
-        <div className="p-8 sm:p-10">
+    
+        <div className=" bg-[#FFFFFF] drop-shadow-[0_4px_7.7px_rgba(0,0,0,0.11)] pt-[121px]  pr-[162px] w-[765px] h-[921px] rounded-[15px]">
           {/* Header/Title Section */}
-          <header className="text-center mb-10">
-            <h1 className={`text-3xl font-bold ${TEXT_GREEN} mb-1`}>
+          <header className="text-center pl-[156px] mb-10">
+            <h1 className={`text-[40px] font-semibold text-[#2D5016] mb-1`}>
               Login to your Account
             </h1>
-            <p className="text-gray-600 text-base font-medium">
+            <p className="text-[#2D5016] text-[26px] pb-[95px]">
               To Write Review
             </p>
           </header>
 
           {/* Form Section */}
-          <form onSubmit={handleLogin} className="space-y-6">
+          <form onSubmit={handleLogin} className="space-y-6 pl-[156px]">
             
             {/* Phone Number Field */}
             <div className="flex flex-col">
-              <label htmlFor="phone" className="text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="phone" className="text-[18px] font-medium text-[#2D5016] mb-3">
                 Phone Number
               </label>
               <input
@@ -73,14 +63,14 @@ const Login = () => {
                 value={phoneNumber}
                 onChange={(e) => setPhoneNumber(e.target.value)}
                 placeholder="Enter your phone number"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#357731] transition duration-200"
+                className="w-full placeholder:text-[#B7B7B7] pl-[35px] py-5 border text-black text-[18px] border-[#B7B7B7] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-[#357731] transition duration-200 mb-8"
                 required
               />
             </div>
 
             {/* Password Field */}
             <div className="flex flex-col">
-              <label htmlFor="password" className="text-sm font-medium text-gray-700 mb-2">
+              <label htmlFor="password" className="text-[18px] font-medium text-[#2D5016] mb-3">
                 Password
               </label>
               <input
@@ -89,7 +79,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Enter your password"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#357731] transition duration-200"
+                className="w-full placeholder:text-[#B7B7B7] text-black text-[18px] pl-[35px] py-5 border border-[#B7B7B7] rounded-[10px] focus:outline-none focus:ring-2 focus:ring-[#357731] transition duration-200 "
                 required
               />
             </div>
@@ -103,9 +93,9 @@ const Login = () => {
                   onChange={(e) => setRememberMe(e.target.checked)}
                   className={`form-checkbox h-4 w-4 rounded text-[#357731] focus:ring-[#357731] border-gray-300`}
                 />
-                <span className="text-gray-600">Remember Me</span>
+                <span className="text-[18px] font-medium text-[#2D5016]">Remember Me</span>
               </label>
-              <a href="#" className={`font-medium ${TEXT_GREEN} hover:underline`}>
+              <a href="#" className={`text-[18px] font-medium text-[#2D5016]`}>
                 Forgot Password?
               </a>
             </div>
@@ -116,13 +106,14 @@ const Login = () => {
                 {message}
               </p>
             )}
+            <div className="flex gap-x-4 items-center ">
 
             {/* Login Button */}
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-3 mt-4 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out
-                ${PRIMARY_GREEN} hover:brightness-110 disabled:opacity-70 flex justify-center items-center space-x-2`}
+              className={`w-[244px] py-4  text-[22px]  text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transition duration-300 ease-in-out
+                bg-[#2D5016] hover:brightness-110 disabled:opacity-70 flex justify-center items-center space-x-2`}
             >
               {loading ? (
                 <svg className="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -133,44 +124,37 @@ const Login = () => {
                 <span>Login</span>
               )}
             </button>
-          </form>
-
-          {/* Social Login Buttons */}
-          <div className="flex space-x-4 mt-6">
+                     {/* Social Login Buttons */}
+          
             
             {/* Facebook Button */}
-            <button
-              onClick={() => handleSocialLogin('Facebook')}
-              className="flex-1 py-3 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition duration-200
-                         flex justify-center items-center space-x-2 text-blue-600 hover:bg-gray-50"
-            >
-              <Facebook className="h-5 w-5 fill-blue-600" />
-            </button>
+            <Image src={'/FacebookLogin.svg'} alt='facebook ' width={83} height={66} onClick={() => handleSocialLogin('Facebook')}/>
+            
 
             {/* Google Button */}
-            <button
-              onClick={() => handleSocialLogin('Google')}
-              className="flex-1 py-3 bg-white border border-gray-300 rounded-lg shadow-md hover:shadow-lg transition duration-200
-                         flex justify-center items-center space-x-2 text-red-500 hover:bg-gray-50"
-            >
-              <Chrome className="h-5 w-5" />
-            </button>
-          </div>
+            <Image src={'/Google.svg'} alt='google ' width={83} height={66} onClick={() => handleSocialLogin('Google')}/>
+            
+          
+</div>
+          </form>
 
+ 
           {/* Register Link */}
-          <p className="text-center text-sm text-gray-600 mt-8">
+          <p className="text-center text-sm text-[#2D5016] mt-4.5 pb-[54px] ">
             Don't have an account?{' '}
-            <a href="#" className={`font-semibold ${TEXT_GREEN} hover:underline`}>
+           
               Register?
-            </a>
+            
           </p>
-
+{/* Footer Accent Bar (to mimic the design's bottom green section) */}
+        <div className={`h-[60px] w-[767px] bg-[#7A9B57] rounded-b-[15px]  drop-shadow-[0_4px_7.7px_rgba(0,0,0,0.11)] `}></div>
         </div>
 
-        {/* Footer Accent Bar (to mimic the design's bottom green section) */}
-        <div className={`h-4 ${PRIMARY_GREEN} rounded-b-xl`}></div>
-      </div>
-    </div>
+        
+  
+  
+   
+   </>
   );
 };
 
