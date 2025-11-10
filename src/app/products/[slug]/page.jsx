@@ -13,6 +13,7 @@ import { products } from '@/app/data/productsData';
 import ImageGallery from '../Components/ImageGallery';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/app/redux/cartSlice';
+import PotColorSelector from '../Components/PotColor';
 
 const ProductDetailPage = ({ params }) => {
   // ✅ unwrap the async params (Next.js 16+)
@@ -31,7 +32,7 @@ const ProductDetailPage = ({ params }) => {
   };
 
   return (
-    <div className="bg-[#F3F3F3] py-12">
+    <div className="bg-[#F3F3F3] pt-[74px] pb-[191px]">
       <Container>
         <Link
           href="/products"
@@ -42,25 +43,85 @@ const ProductDetailPage = ({ params }) => {
         </Link>
 
         
-          <Flex className="gap-12">
-            <div className="w-1/2">
+          <Flex className="items-start gap-x-[92px]">
+            {/* Image Gallery  */}
+            <div className="">
               <ImageGallery images={product.images} productName={product.name}  />
             </div>
-
-            <div className="w-1/2">
-              <h1 className="text-[42px] font-bold text-[#2D5016] mb-4">{product.name}</h1>
-              <p className="text-[#A7A7A7] text-[24px] font-medium mb-6">{product.type}</p>
-
-              <Flex className="gap-x-2 mb-6">
+            
+            <div className="">
+              <h3 className="text-[36px] text-start font-semibold text-[#000000] mb-6">{product.name}</h3>
+              
+ {/* Start and review  */}
+              <Flex className="gap-x-2 mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <FaStar key={i} className="text-yellow-400 text-2xl" />
+                  <FaStar key={i} className="text-yellow-500 w-[31px] h-[31px]" />
                 ))}
-                <span className="text-[20px] font-medium text-[#2D5016] ml-2">
+                <span className="text-[22px] font-medium text-[#2D5016] ml-2">
                   ({product.reviews} reviews)
                 </span>
+                <Flex className={'pl-[58px] gap-x-3'}>
+                  <div className="h-[27px] w-[27px] rounded-full bg-[#7A9B57]"></div>
+ <span
+                  className={` text-[#7A9B57] font-medium text-[22px] `}
+                >
+                  {product.inStock ? 'In Stock' : 'Out of Stock'}
+                </span>
+                </Flex>
+               
               </Flex>
 
-              <h2 className="text-[48px] font-bold text-[#CC7722] mb-8">৳ {product.price}</h2>
+           
+            <p className="text-[#8C8C8C] text-[22px] ">{product.type}</p>
+               
+ {/* size box  */}
+ <div className="w-[319px] pt-3">
+  <h3 className='text-[25px] text-[#000000] font-medium pb-1'>Size</h3>
+  <Flex className={'gap-x-3.5'}>
+    <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[18px] text-center font-medium pb-1'>Small</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 240</p>
+    </div>
+
+     <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[16px] text-center font-medium pb-1'>Medium</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 350</p>
+    </div>
+
+     <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[18px] text-center font-medium pb-1'>Large</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 450</p>
+    </div>
+  </Flex>
+
+ </div>
+
+
+  {/*Include Pot */}
+ <div className="w-[319px] pt-5">
+  <h3 className='text-[25px] text-[#000000] font-medium pb-1'>Include Pot</h3>
+  <Flex className={'gap-x-3.5'}>
+    <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[18px] text-center font-medium pb-1'>Small</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 100</p>
+    </div>
+
+     <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[16px] text-center font-medium pb-1'>Medium</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 130</p>
+    </div>
+
+     <div className="w-[97px] h-[86px] shadow bg-[#F3F3F3] border borde-[#CDCDCD] rounded-[10px] px-[21px] pt-4  duration-300 cursor-pointer hover:border-[#7A9B57] hover:bg-[#EDFFDA]">
+    <h4 className='text-[#000000] text-[18px] text-center font-medium pb-1'>Large</h4>
+    <p className='text-[#404040] text-[18px]  '>৳ 170</p>
+    </div>
+  </Flex>
+
+ </div>
+ <PotColorSelector/>
+
+
+              <h3 className="text-[48px] font-bold text-[#CC7722] mb-8">৳ {product.price}</h3>
 
               <div className="mb-8">
                 <h3 className="text-[24px] font-semibold text-[#2D5016] mb-4">Description</h3>
@@ -93,13 +154,7 @@ const ProductDetailPage = ({ params }) => {
               )}
 
               <div className="mb-8">
-                <span
-                  className={`px-4 py-2 rounded-full text-white font-semibold ${
-                    product.inStock ? 'bg-green-500' : 'bg-red-500'
-                  }`}
-                >
-                  {product.inStock ? 'In Stock' : 'Out of Stock'}
-                </span>
+                
               </div>
 
               {/* ✅ Redux Add to Cart (design unchanged) */}

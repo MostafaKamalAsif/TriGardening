@@ -1,10 +1,20 @@
 "use client"
 
-
-const Button = ({className,children}) => {
- 
+const Button = ({className, children, onClick, type = "button"}) => {
+  const handleClick = (e) => {
+    if (onClick) {
+      onClick(e);
+    }
+  };
+  
   return (
-    <div className={` text-white ${className}`}>{children}</div>
+    <button 
+      type={type}
+      onClick={handleClick}
+      className={`text-white ${className}`}
+    >
+      {children}
+    </button>
   )
 }
 

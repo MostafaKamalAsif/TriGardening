@@ -11,14 +11,23 @@ import { IoSearchSharp } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
 
 const Header = () => {
-  // Get total quantity from Redux store
-  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  // ✅ Get total quantity from Redux store
+  const totalQuantity = useSelector((state) => {
+    console.log('🔍 Header - Redux State:', state);
+    console.log('🛒 Header - Total Quantity:', state.cart?.totalQuantity);
+    return state.cart?.totalQuantity || 0;
+  });
+
+  useEffect(() => {
+    console.log('🔄 Header mounted/updated - Total Quantity:', totalQuantity);
+  }, [totalQuantity]);
 
   return (
     <>
-      <header className="bg-[#2D5016] pt-4.5 pb-[21px] font-">
+      <header className="bg-[#2D5016] pt-4.5 pb-[21px]">
         <Container>
           <Flex className={" "}>
             <div className=" flex items-center pr-[82px]">
@@ -69,17 +78,17 @@ const Header = () => {
              <IoSearchSharp className="absolute top-[50%] right-14  -translate-y-[50%] text-2xl " />
             </div>
             
-            {/* Cart Icon with Badge */}
+            {/* ✅ Cart Icon with Badge */}
             <div className=" flex items-center gap-x-[52px] pr-0">
-              {/* ✅ Cart Icon with badge */}
-        <Link href="/cart" className="relative">
-          <MdShoppingCart className="text-white w-[35px] h-[35px]" />
-          {totalQuantity > 0 && (
-            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center">
-              {totalQuantity}
-            </span>
-          )}
-        </Link>
+              <Link href="/cart" className="relative">
+                <MdShoppingCart className="text-white w-[35px] h-[35px]" />
+                {totalQuantity > 0 && (
+                  <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center animate-pulse">
+                    {totalQuantity}
+                  </span>
+                )}
+               
+              </Link>
               <FaUser className="text-white w-[35px] h-[35px]" />
             </div>
           </Flex>

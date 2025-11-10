@@ -4,10 +4,12 @@ import Catagory from "./(Components)/Layout/Catagory";
 import FeaturedProduct from "./(Components)/Layout/FeaturedProduct";
 import PopularProducts from "./(Components)/Layout/PopularProducts";
 import PlantAnalysis from "./(Components)/Layout/PlantAnalysis";
+import ReduxTestComponent from "./redux/ReduxTestComponent";
 
 export default function Home() {
   return (
     <>
+    
     <Banner/>
     <Catagory/>
     <FeaturedProduct/>
