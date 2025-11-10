@@ -10,7 +10,12 @@ import { IoCall } from "react-icons/io5";
 import { IoSearchSharp } from "react-icons/io5";
 import { MdShoppingCart } from "react-icons/md";
 import { FaUser } from "react-icons/fa6";
+import { useSelector } from 'react-redux';
+
 const Header = () => {
+  // Get total quantity from Redux store
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+
   return (
     <>
       <header className="bg-[#2D5016] pt-4.5 pb-[21px] font-">
@@ -63,9 +68,18 @@ const Header = () => {
               />
              <IoSearchSharp className="absolute top-[50%] right-14  -translate-y-[50%] text-2xl " />
             </div>
-
+            
+            {/* Cart Icon with Badge */}
             <div className=" flex items-center gap-x-[52px] pr-0">
-              <Link href={'/cart'}> <MdShoppingCart className="text-white w-[35px] h-[35px]" /></Link>
+              {/* ✅ Cart Icon with badge */}
+        <Link href="/cart" className="relative">
+          <MdShoppingCart className="text-white w-[35px] h-[35px]" />
+          {totalQuantity > 0 && (
+            <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-semibold w-5 h-5 rounded-full flex items-center justify-center">
+              {totalQuantity}
+            </span>
+          )}
+        </Link>
               <FaUser className="text-white w-[35px] h-[35px]" />
             </div>
           </Flex>

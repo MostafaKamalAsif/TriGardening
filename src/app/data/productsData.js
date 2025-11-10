@@ -10,9 +10,10 @@ export const products = [
     description: "The Monstera Deliciosa, also known as the Swiss Cheese Plant, is a stunning tropical plant known for its large, glossy leaves with unique splits and holes. Perfect for adding a touch of the jungle to your indoor space.",
     images: [
       "/Deliciosa.svg",
-      "/Deliciosa-2.jpg",
-      "/Deliciosa-3.jpg",
-      "/Deliciosa-4.jpg"
+            "/Deliciosa.svg",
+      "/Deliciosa.svg",
+      "/Deliciosa.svg",
+
     ],
     category: "Indoor Plants",
     size: "Medium",
@@ -31,9 +32,9 @@ export const products = [
     description: "Premium organic compost fertilizer enriched with essential nutrients to help your plants thrive naturally.",
     images: [
       "/Shvets.svg",
-      "/Shvets-2.jpg",
-      "/Shvets-3.jpg",
-      "/Shvets-4.jpg"
+      "/Shvets.svg",
+      "/Shvets.svg",
+      "/Shvets.svg"
     ],
     category: "Fertilizer",
     inStock: true
@@ -49,9 +50,9 @@ export const products = [
     description: "Professional-grade pruning shears designed for precision cutting and long-lasting performance.",
     images: [
       "/Pavel.svg",
-      "/Pavel-2.jpg",
-      "/Pavel-3.jpg",
-      "/Pavel-4.jpg"
+      "/Pavel.svg",
+      "/Pavel.svg",
+      "/Pavel.svg"
     ],
     category: "Equipment",
     inStock: true
@@ -67,9 +68,9 @@ export const products = [
     description: "The Snake Plant is one of the easiest houseplants to care for. It's extremely hardy and can tolerate low light and irregular watering.",
     images: [
       "/Stroobants.svg",
-      "/Stroobants-2.jpg",
-      "/Stroobants-3.jpg",
-      "/Stroobants-4.jpg"
+       "/Stroobants.svg",
+       "/Stroobants.svg",
+       "/Stroobants.svg",
     ],
     category: "Indoor Plants",
     size: "Small",
@@ -80,7 +81,7 @@ export const products = [
 ,
  {
     id: 5,
-    slug: "pruning-shears",
+    slug: "shears",
     name: "Pruning Shears",
     type: "Equipment",
     price: "180 - 450",
@@ -89,16 +90,16 @@ export const products = [
     description: "Professional-grade pruning shears designed for precision cutting and long-lasting performance.",
     images: [
       "/Pavel.svg",
-      "/Pavel-2.jpg",
-      "/Pavel-3.jpg",
-      "/Pavel-4.jpg"
+      "/Deliciosa.svg",
+      "/Pavel.svg",
+      "/Pavel.svg",
     ],
     category: "Equipment",
     inStock: true
   },
   {
     id: 6,
-    slug: "monstera-deliciosa",
+    slug: "deliciosa",
     name: "Monstera Deliciosa",
     type: "Indoor Plant",
     price: "2000 - 3,400",
@@ -107,9 +108,10 @@ export const products = [
     description: "The Monstera Deliciosa, also known as the Swiss Cheese Plant, is a stunning tropical plant known for its large, glossy leaves with unique splits and holes. Perfect for adding a touch of the jungle to your indoor space.",
     images: [
       "/Deliciosa.svg",
-      "/Deliciosa-2.jpg",
-      "/Deliciosa-3.jpg",
-      "/Deliciosa-4.jpg"
+            "/Pavel.svg",
+      "/Deliciosa.svg",
+      "/Deliciosa.svg",
+
     ],
     category: "Indoor Plants",
     size: "Medium",
