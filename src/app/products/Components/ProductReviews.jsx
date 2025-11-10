@@ -1,21 +1,17 @@
 
 
 'use client';
-import React, { useState } from 'react';
-import Image from 'next/image';
-import { FaStar } from 'react-icons/fa';
+import React from 'react';
+import { FaStar, FaStarHalfAlt } from 'react-icons/fa';
 import { MdEdit } from "react-icons/md";
 import { BiLike, BiDislike } from "react-icons/bi";
+import Container from '@/app/(Components)/Container';
+import Flex from '@/app/(Components)/Flex';
 import Button from '@/app/(Components)/Button';
-
+import Image from 'next/image';
+import rating from '/public/rateing.svg'
 const ProductReviews = () => {
-  const reviewStats = [
-    { stars: 5, count: 847, percentage: 85, color: '#7A9B57' },
-    { stars: 4, count: 274, percentage: 27, color: '#97DE4C' },
-    { stars: 3, count: 75, percentage: 8, color: '#D84315' },
-    { stars: 2, count: 37, percentage: 4, color: '#D84315' },
-    { stars: 1, count: 14, percentage: 1, color: '#C62828' }
-  ];
+
 
   const highlights = [
     { text: 'Easy to Grow', bgColor: '#E8F5E9', textColor: '#2D5016' },
@@ -29,7 +25,7 @@ const ProductReviews = () => {
     {
       id: 1,
       name: 'Ismita Chowdhury',
-      avatar: '/Comment.svg',
+      avatar: '/ismita.svg',
       verified: true,
       rating: 5,
       date: '4 Days ago ( 12 September, 2025 )',
@@ -44,7 +40,7 @@ const ProductReviews = () => {
     {
       id: 2,
       name: 'Aminul Islam',
-      avatar: '/Comment.svg',
+      avatar: '/aminul.svg',
       verified: true,
       rating: 4,
       date: '1 Week ago ( 4 September, 2025 )',
@@ -59,74 +55,75 @@ const ProductReviews = () => {
     {
       id: 3,
       name: 'Hridoy Shil',
-      avatar: '/Comment.svg',
+      avatar: '/Hridoy.svg',
       verified: true,
       rating: 4,
       date: '2 Week ago ( 1 August, 2025 )',
       comment: 'আমার ইন্দোর গার্ডেনের জন্য এটাকেতর পারপেক্ত। পাত্র পুক্তঃ গাছ এককোম এম্প এমন বাসুকাম সুলভ পরিস্থিতি আপনার মধ্যে সঙ ব্যবহার। সবার পরে অনেক অপেক্ষা বেরিদ শেখিতসে। কারণ গাছ সামিবান তীবের গার থো কোন প্রকল্প করবে এবং তারের করবে এবং কাউসুর সেভার টারগানের করুম।',
       helpful: 12,
       notHelpful: 0,
-      images: ['/review1.jpg', '/review2.jpg']
+      images: ['/HridoySent_1.svg', '/HridoySent_1.svg']
     }
   ];
 
   return (
-    <div className="bg-white rounded-[20px] mt-12 pt-10 pb-12 px-12">
+    <>
+    <Container className={'pt-[124px]'}>
+    
+
+    
       {/* Header */}
-      <h2 className="text-[28px] font-semibold text-[#000000] mb-2">Customer Reviews & Ratings</h2>
-      <p className="text-[16px] text-[#616161] mb-10">See what other gardeners are saying about this product</p>
+      <h2 className="text-[52px] font-semibold text-[#2D5016] mb-2">Customer Reviews & Ratings</h2>
+      <div className="">
+      <p className="text-[22px] font-medium text-[#2D5016] pb-[81px]">See what other gardeners are saying about this product</p>
+
+
 
       {/* Rating Overview */}
-      <div className="flex gap-16 mb-12 pb-12 border-b border-[#E0E0E0]">
+      <div className=" w-[1641px] pb-9 pt-10 pl-14.5 pr-15.5 mb-[39px]  bg-[#FFFFFF] rounded-[20px]">
+        <Flex className={'flex gap-x-[344px]'}>
         {/* Left: Average Rating */}
-        <div className="flex flex-col items-center pr-12 border-r border-[#E0E0E0]">
-          <div className="text-[#2D5016] text-[80px] font-bold leading-none mb-3">4.7</div>
-          <div className="flex gap-1 mb-2">
+        <div className="text-center ">
+          <h3 className="text-[#2D5016] text-[99px] font-semibold pl-[250px]">4.7</h3>
+          <div className="flex justify-center gap-x-1 mb-5 pl-[217px]">
             {[...Array(4)].map((_, i) => (
               <FaStar key={i} className="text-[#FFA726] w-6 h-6" />
             ))}
-            <FaStar className="text-[#FFA726] w-6 h-6 opacity-50" />
+            < FaStarHalfAlt className="text-[#FFA726] w-6 h-6 " />
+            <div className="">
+<p className="text-[22px] font-medium text-[#2D5016] pl-2">(24)</p>
+ </div>
           </div>
-          <p className="text-[14px] text-[#757575] mb-1">(24)</p>
-          <p className="text-[13px] text-[#9E9E9E]">Based on 1,247 reviews</p>
+                  <p className="text-[22px] font-medium text-[#2D5016] pl-[213px]">Based on 1,247 reviews</p>
+
+          
+          
         </div>
 
         {/* Right: Rating Bars */}
-        <div className="flex-1 space-y-3">
-          {reviewStats.map((stat) => (
-            <div key={stat.stars} className="flex items-center gap-3">
-              <span className="text-[14px] text-[#424242] w-16 font-medium">{stat.stars} Star</span>
-              <div className="flex-1 h-2 bg-[#E0E0E0] rounded-full overflow-hidden">
-                <div 
-                  className="h-full rounded-full transition-all"
-                  style={{ 
-                    width: `${stat.percentage}%`,
-                    backgroundColor: stat.color
-                  }}
-                />
-              </div>
-              <span className="text-[14px] text-[#424242] w-12 text-right font-medium">{stat.count}</span>
-            </div>
-          ))}
+        <div className="flex- space-y-3">
+        <Image src={rating} alt='rating'/>
         </div>
+        </Flex>
+        <hr  className='w-[1521px] mt-[86px] mb-[38.3px] border border-[#D9D9D9]'/>
+        <Button className={' w- [301px] flex items-center gap-2 bg-[#2D5016] text-white px-6 py-3 rounded-[8px] hover:bg-[#1d3910] transition-colors'}>
+ <MdEdit size={26} />
+          <span className="text-[26px] font-medium">Write Review</span>
+        </Button>
+         
       </div>
 
-      {/* Write Review Button */}
-      <div className="mb-10">
-        <button className="flex items-center gap-2 bg-[#2D5016] text-white px-6 py-3 rounded-[8px] hover:bg-[#1d3910] transition-colors">
-          <MdEdit size={20} />
-          <span className="text-[15px] font-medium">Write Review</span>
-        </button>
-      </div>
+      
+     
 
       {/* Review Highlights */}
-      <div className="mb-10">
-        <h3 className="text-[20px] font-semibold text-[#000000] mb-4">Review Highlights</h3>
+      <div className="w-[1641px] pt-7.5 pl-13.5 pb-[45px] mb-[47px] bg-[#FFFFFF] rounded-[20px] ">
+        <h3 className="text-[34px] font-semibold text-[#2D5016] mb-4">Review Highlights</h3>
         <div className="flex flex-wrap gap-3">
           {highlights.map((highlight, index) => (
             <div
               key={index}
-              className="px-5 py-2.5 rounded-[20px] text-[14px] font-medium transition-all hover:shadow-md cursor-pointer"
+              className="px-5 py-2.5 rounded-[20px] text-[18px] font-medium transition-all hover:shadow-md cursor-pointer"
               style={{ 
                 backgroundColor: highlight.bgColor,
                 color: highlight.textColor
@@ -141,7 +138,7 @@ const ProductReviews = () => {
       {/* Reviews List */}
       <div className="space-y-8">
         {reviews.map((review) => (
-          <div key={review.id} className="pb-8 border-b border-[#E0E0E0] last:border-0">
+          <div key={review.id} className="pb-8 w-[1641px] bg-[#FFFFFF] rounded-[20px] ">
             {/* Reviewer Header */}
             <div className="flex items-start gap-3 mb-4">
               <div className="w-12 h-12 rounded-full bg-[#BDBDBD] overflow-hidden flex-shrink-0">
@@ -224,6 +221,8 @@ const ProductReviews = () => {
         </button>
       </div>
     </div>
+    </Container>
+    </>
   );
 };
 

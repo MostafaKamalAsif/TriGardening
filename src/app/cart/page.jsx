@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Container from '../(Components)/Container';
 import Button from '../(Components)/Button';
 import Link from 'next/link';
-
+import { RxCross2 } from "react-icons/rx";
 const CartPage = () => {
   const { items, totalQuantity } = useSelector((state) => state.cart);
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ const CartPage = () => {
   return (
     <div className="bg-[#F3F3F3] py-12 min-h-screen">
       <Container>
-        <h1 className="text-[42px] font-bold text-[#2D5016] mb-8">🛒 Shopping Cart</h1>
+        <h1 className="text-[42px] font-bold text-[#2D5016] mb-8"> Shopping Cart</h1>
         
         {items.length === 0 ? (
           <div className="bg-white rounded-[20px] p-12 text-center">
@@ -44,14 +44,14 @@ const CartPage = () => {
                     <p className="text-[28px] font-semibold text-[#CC7722] mt-2">৳ {item.price}</p>
                   </div>
 
-                  <div className="flex items-center gap-4">
+                  <div className="flex items-center gap-4 text-[#000000]">
                     <Button 
                       onClick={() => dispatch(decreaseQuantity(item.id))}
-                      className="w-10 h-10 bg-gray-200 rounded-lg text-[24px] font-bold hover:bg-gray-300 flex items-center justify-center"
+                      className="w-10 h-10 bg-gray-200 rounded-lg  text-[24px] font-bold hover:bg-gray-300 flex items-center justify-center"
                     >
                       -
                     </Button>
-                    <span className="text-[24px] font-semibold w-12 text-center">{item.quantity}</span>
+                    <span className="text-[24px] font-semibold w-12  text-center">{item.quantity}</span>
                     <Button 
                       onClick={() => dispatch(increaseQuantity(item.id))}
                       className="w-10 h-10 bg-gray-200 rounded-lg text-[24px] font-bold hover:bg-gray-300 flex items-center justify-center"
@@ -62,9 +62,9 @@ const CartPage = () => {
 
                   <Button 
                     onClick={() => dispatch(removeFromCart(item.id))}
-                    className="px-6 py-3 bg-red-500 text-white text-[18px] font-semibold rounded-lg hover:bg-red-600"
+                    className="  "
                   >
-                    Remove
+                    <RxCross2 className='text-red-500 text-[52px] font-bold hover:text-red-600 duration-200 cursor-pointer'/>
                   </Button>
                 </div>
               ))}

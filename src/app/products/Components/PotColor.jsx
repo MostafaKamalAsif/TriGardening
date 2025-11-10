@@ -1,28 +1,31 @@
 'use client';
 import { useState } from 'react';
-import Flex from '@/app/(Components)/Flex';
 
 const PotColorSelector = () => {
+  const [selectedColor, setSelectedColor] = useState('white');
 
-  const [selected, setSelected] = useState(null);
-
-  
-  const colors = ['#FFFFFF', '#FFFFFF']; 
+  const colors = [
+    { name: 'White', value: 'white', bg: 'bg-white' },
+    { name: 'Brown', value: 'brown', bg: 'bg-[#A0522D]' }, 
+  ];
 
   return (
-    <div>
-      <h3 className='font-medium text-[25px] text-[#000000] pt-3.5 pb-3'>Pot Color</h3>
-      <Flex className={'gap-x-5'}>
-        {colors.map((color, index) => (
-          <div
-            key={index}
-            onClick={() => setSelected(index)}
-            className={`w-[42px] h-[42px] rounded-full border-[5px] border-[#DADADA] cursor-pointer transition-all duration-200 ${
-              selected === index ? 'bg-[#9E6431]' : 'bg-[#FFFFFF]'
-            }`}
-          ></div>
+    <div className="pt-3.5">
+      <h3 className="text-[25px] font-medium text-[#000000]">Pot Color</h3>
+      <div className="flex pt-3 gap-x-5  ">
+        {colors.map((color) => (
+          <button
+            key={color.value}
+            onClick={() => setSelectedColor(color.value)}
+            className={`
+              w-[42px] h-[42px] rounded-full border-[5px]  cursor-pointer transition-all duration-200
+              ${selectedColor === color.value ? 'border-[#DADADA]' : ''} 
+              ${color.bg}
+              transition-all
+            `}
+          />
         ))}
-      </Flex>
+      </div>
     </div>
   );
 };

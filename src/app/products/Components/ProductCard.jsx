@@ -1,8 +1,8 @@
 'use client';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
-import { FaStar } from "react-icons/fa";
-import Button from '@/app/(Components)/Button';
+import { FaStar, FaStarHalfAlt, FaRegStar } from "react-icons/fa";
+
 import Flex from '@/app/(Components)/Flex';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '@/app/redux/cartSlice';
@@ -78,12 +78,21 @@ const ProductCard = ({ product, className }) => {
         <p className='text-[#A7A7A7] text-[18px] font-medium pb-4.5'>{product.type}</p>
         <h2 className='text-[32px] font-semibold text-[#CC7722]'>৳ {product.price}</h2>
 
-        <Flex className={'gap-x-[5px] pt-[19px]'}>
-          {[...Array(5)].map((_, i) => (
-            <FaStar key={i} className='text-yellow-400 text-3xl' />
-          ))}
-          <h3 className='text-[22px] font-medium pl-0.5 text-[#2D5016]'>({product.reviews})</h3>
-        </Flex>
+        <Flex className="gap-x-[5px] pt-[19px] items-center">
+  {[...Array(5)].map((_, i) => {
+    const rating = product.rating || 5; // fallback if missing
+    if (i < Math.floor(rating)) {
+      return <FaStar key={i} className="text-yellow-400 text-3xl" />;
+    } else if (i < rating) {
+      return <FaStarHalfAlt key={i} className="text-yellow-400 text-3xl" />;
+    } else {
+      return <FaRegStar key={i} className="text-yellow-400 text-3xl" />;
+    }
+  })}
+  <h3 className="text-[22px] font-medium pl-0.5 text-[#2D5016]">
+    ({product.reviews})
+  </h3>
+</Flex>
         
         <button
           type="button"

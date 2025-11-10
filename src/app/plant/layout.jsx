@@ -16,13 +16,13 @@ const poppins = Poppins({
 
 export default function BlogLayout({ children }) {
   return (
-    <main className="min-h-screen antialiased bg-[#F3F3F3] ">
+    <main className=" antialiased bg-[#F3F3F3] ">
      
         <Flex className="items-start ">
              <div className="w-[373px] shrink-0">
             <SideBar/>
           </div>
-          <div className="flex-1 ">{children}</div>
+          <div className="shrink-0 ">{children}</div>
          
         </Flex>
       
