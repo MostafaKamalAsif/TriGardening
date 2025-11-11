@@ -14,7 +14,7 @@ import { useSelector } from 'react-redux';
 import { useEffect } from 'react';
 
 const Header = () => {
-  // ✅ Get total quantity from Redux store
+  //  Get total quantity from Redux store
   const totalQuantity = useSelector((state) => {
     console.log('🔍 Header - Redux State:', state);
     console.log('🛒 Header - Total Quantity:', state.cart?.totalQuantity);
@@ -78,7 +78,7 @@ const Header = () => {
              <IoSearchSharp className="absolute top-[50%] right-14  -translate-y-[50%] text-2xl " />
             </div>
             
-            {/* ✅ Cart Icon with Badge */}
+            {/*  Cart Icon with Badge */}
             <div className=" flex items-center gap-x-[52px] pr-0">
               <Link href="/cart" className="relative">
                 <MdShoppingCart className="text-white w-[35px] h-[35px]" />
